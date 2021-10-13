@@ -9,6 +9,7 @@ const navStyle = {
 export default function NavBar() {
   return (
     <nav style={navStyle}>
+      <div>Title placeholder</div>
       <NavButton text="Hem" />
       <NavButton text="Arkiv" />
       <NavButton text="Om" />
