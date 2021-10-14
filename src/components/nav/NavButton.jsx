@@ -6,9 +6,9 @@ export default function NavButton({ text, path = "/" }) {
   const style = {
     background: hover ? "#dfaa6a" : "transparent",
     border: "none",
-    padding: ".5em 1em",
+    padding: "1.2em",
     color: "white",
-    fontSize: "1.5em",
+    fontSize: "1.4em",
   };
 
   return (
