@@ -9,11 +9,10 @@ const navStyle = {
 export default function NavBar() {
   return (
     <nav style={navStyle}>
-      <div>Title placeholder</div>
-      <NavButton text="Hem" />
-      <NavButton text="Arkiv" />
-      <NavButton text="Om" />
-      <NavButton text="Kontakt" />
+      <NavButton text="Hem" path="/" />
+      <NavButton text="Arkiv" path="/archive" />
+      <NavButton text="Om" path="about" />
+      <NavButton text="Kontakt" path="about" />
     </nav>
   );
 }

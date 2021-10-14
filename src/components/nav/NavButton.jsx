@@ -1,7 +1,10 @@
-export default function NavButton({ text, linkTo = "/" }) {
-  const handleClick = () => {};
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function NavButton({ text, path = "/" }) {
+  const [hover, setHover] = useState(false);
   const style = {
-    background: "transparent",
+    background: hover ? "#dfaa6a" : "transparent",
     border: "none",
     padding: ".5em 1em",
     color: "white",
@@ -10,9 +13,14 @@ export default function NavButton({ text, linkTo = "/" }) {
 
   return (
     <>
-      <button onClick={handleClick} style={style}>
+      <Link
+        to={path}
+        style={style}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         {text}
-      </button>
+      </Link>
     </>
   );
 }
