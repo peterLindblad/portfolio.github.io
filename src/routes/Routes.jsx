@@ -1,16 +1,19 @@
 import { Switch, Route } from "react-router";
+import AboutPage from "../components/page/AboutPage";
+import ArchivePage from "../components/page/ArchivePage";
+import MainPage from "../components/page/MainPage";
 
 export default function Routes() {
   return (
     <Switch>
       <Route path="/archive">
-        <div>Archive Page</div>
+        <ArchivePage />
       </Route>
       <Route path="/about">
-        <div>About Page</div>
+        <AboutPage />
       </Route>
       <Route path="/">
-        <div>Main Page</div>
+        <MainPage />
       </Route>
     </Switch>
   );

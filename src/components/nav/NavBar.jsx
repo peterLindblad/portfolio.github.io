@@ -1,5 +1,5 @@
 import NavButton from "./NavButton";
-import Logo from "./Logo"
+import Logo from "./Logo";
 
 const navStyle = {
   background: "#FFBA7A",
@@ -8,7 +8,6 @@ const navStyle = {
   padding: "0em 0.3em 0em 2em",
   fontFamily: "Playfair Display",
 };
-
 
 export default function NavBar() {
   return (
