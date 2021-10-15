@@ -1,38 +1,19 @@
 import { Switch, Route } from "react-router";
-import { Container, ContainerTypes } from "../components/content/Container";
+import AboutPage from "../components/page/AboutPage";
+import ArchivePage from "../components/page/ArchivePage";
+import MainPage from "../components/page/MainPage";
 
 export default function Routes() {
   return (
     <Switch>
       <Route path="/archive">
-        <Container type={ContainerTypes.Main}>
-          <Container type={ContainerTypes.InnerCentered}>
-            <h2>Archive Page</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt eros. Phasellus auctor lorem in vulputate luctus. Vestibulum rhoncus facilisis magna, at viverra magna feugiat vel. In sagittis libero id pretium egestas. Quisque mi metus, bibendum sed lorem ut, egestas porta orci. Sed interdum egestas enim varius pellentesque. Duis pellentesque ut ligula et suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac neque et augue pellentesque sagittis. 
-              </p>
-          </Container>
-        </Container>
+        <ArchivePage />
       </Route>
       <Route path="/about">
-        <Container type={ContainerTypes.Main}>
-          <Container type={ContainerTypes.InnerCentered}>
-            <h2>About Page</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt eros. Phasellus auctor lorem in vulputate luctus. Vestibulum rhoncus facilisis magna, at viverra magna feugiat vel. In sagittis libero id pretium egestas. Quisque mi metus, bibendum sed lorem ut, egestas porta orci. Sed interdum egestas enim varius pellentesque. Duis pellentesque ut ligula et suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac neque et augue pellentesque sagittis. 
-              </p>
-          </Container>
-        </Container>
+        <AboutPage />
       </Route>
       <Route path="/">
-        <Container type={ContainerTypes.Main}>
-          <Container type={ContainerTypes.InnerCentered}>
-            <h2>Main Page</h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim tincidunt eros. Phasellus auctor lorem in vulputate luctus. Vestibulum rhoncus facilisis magna, at viverra magna feugiat vel. In sagittis libero id pretium egestas. Quisque mi metus, bibendum sed lorem ut, egestas porta orci. Sed interdum egestas enim varius pellentesque. Duis pellentesque ut ligula et suscipit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer ac neque et augue pellentesque sagittis. 
-              </p>
-          </Container>
-        </Container>
+        <MainPage />
       </Route>
     </Switch>
   );

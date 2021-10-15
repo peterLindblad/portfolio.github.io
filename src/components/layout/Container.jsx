@@ -1,18 +1,3 @@
-/* const mainContainerStyle = {
-  display: "flex",
-  width: "100%",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
-const innerContainerStyle = {
-  display: "flex",
-  flexDirection: "column",
-  width: "90%",
-  maxWidth: "1200px",
-}; */
-
 export const ContainerTypes =
 {
   Main: "Main",
