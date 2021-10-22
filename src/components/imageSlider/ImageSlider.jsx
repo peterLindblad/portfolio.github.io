@@ -17,6 +17,7 @@ const style = {
     maxHeight: "100%",
     width: "auto",
     height: "auto",
+    userSelect: "none",
   },
 };
 
