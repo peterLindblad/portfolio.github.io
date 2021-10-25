@@ -1,4 +1,4 @@
-const host = "http://localhost:3000/portfolio.github.io/";
+const host = window.location.origin + "/portfolio.github.io/";
 const location = "img/";
 
 export const images = [
