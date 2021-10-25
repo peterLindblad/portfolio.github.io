@@ -7,7 +7,7 @@ export const ContainerTypes = {
 const ContainerStyles = {
   Main: {
     display: "flex",
-    width: "100%",
+    width: "100vw",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -20,11 +20,22 @@ const ContainerStyles = {
   InnerCentered: {
     display: "flex",
     flexDirection: "column",
-    width: "90%",
+    width: "90vw",
     maxWidth: "1200px",
   },
 };
 
+// wrapper component for content.
 export function Container({ type, children }) {
-  return <div style={ContainerStyles[type]}>{children}</div>;
+  return (
+    <>
+      {type ? (
+        <div style={ContainerStyles[type]}>{children}</div>
+      ) : (
+        <div style={ContainerStyles.Main}>
+          <div style={ContainerStyles.InnerCentered}>{children}</div>
+        </div>
+      )}
+    </>
+  );
 }
