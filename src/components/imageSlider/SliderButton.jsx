@@ -14,6 +14,7 @@ const style = {
     fontSize: "2em",
     fontWeight: "900",
     cursor: "pointer",
+    userSelect: "none",
   },
   left: {
     left: 0,
