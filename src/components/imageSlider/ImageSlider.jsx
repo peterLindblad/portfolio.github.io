@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { images } from "./images";
 import SliderButton from "./SliderButton";
+let images = require("../../images/images.json");
 
 const style = {
   wrapper: {
