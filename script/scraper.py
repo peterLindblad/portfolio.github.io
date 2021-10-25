@@ -1,48 +1,63 @@
 from selenium import webdriver
-from selenium.webdriver.chrome import options
 from selenium.webdriver.common.keys import Keys
 import json
 import config
+import time
 
 # configuration variables
 url = config.url
 saveLocation = config.saveLocation
-
-chrome_options = webdriver.ChromeOptions()
-# This is how you can make the browser headless
-chrome_options.add_argument("--headless")
+cookieSelector = config.cookies
 
 
-# The following line controls the notification popping up right after login
-#prefs = {"profile.default_content_setting_values.notifications": 2}
-#chrome_options.add_experimental_option("prefs", prefs)
-driver = webdriver.Chrome(options=chrome_options)
-#driver = webdriver.Chrome()
-driver.get(url)
-# driver.find_element_by_id("email").send_keys("your_username")
-# driver.find_element_by_id("pass").send_keys("your_password", Keys.RETURN)
-# driver.get(url)
-#soup = BeautifulSoup(driver.page_source, "lxml")
-
-imgElements = driver.find_elements_by_tag_name('img')
-# imgElements = driver.find_elements_by_class_name('wXeWr islib nfEiy')
-print('\n\n\n')
-print(len(imgElements))
-imagesSRC = []
+def initDriver():
+    chrome_options = webdriver.ChromeOptions()
+    # This is how you can make the browser headless
+    chrome_options.add_argument("--headless")
+    prefs = {"profile.default_content_setting_values.notifications": 2}
+    chrome_options.add_experimental_option("prefs", prefs)
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get(url)
+    return driver
 
 
-'''
-imgElements[1].click()
-thing = driver.find_element_by_css_selector(
-    '#Sva75c > div > div > div.pxAole > div.tvh9oe.BIB1wf > c-wiz > div > div.OUZ5W > div.zjoqD > div.qdnLaf.isv-id > div > a > img')
-imagesSRC.append({"id": 1, "url": thing.get_attribute("src")})
-'''
+def scrollPage(driver):
+    reached_page_end = False
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while not reached_page_end:
+        driver.find_element_by_xpath('//body').send_keys(Keys.END)
+        time.sleep(2)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if last_height == new_height:
+            reached_page_end = True
+        else:
+            last_height = new_height
+    time.sleep(1)
 
 
-for index, elem in enumerate(imgElements):
-    imagesSRC.append({"id": index+1, "url": elem.get_attribute("src")})
-imagesSRC.pop()
-print('\n\n\n')
-with open(saveLocation, 'w') as outfile:
-    json.dump(imagesSRC, outfile)
+def allowCookies(driver):
+    allowCookies = driver.find_element_by_css_selector(cookieSelector)
+    allowCookies.click()
+
+
+def getImgUrls(driver):
+    imgElements = driver.find_elements_by_tag_name('img')
+    urlList = []
+    for index, elem in enumerate(imgElements):
+        urlList.append({"id": index+1, "url": elem.get_attribute("src")})
+    return urlList
+
+
+def save(urlList):
+    print(f'\n\nsaving: {len(urlList)} urls\n\n')
+    with open(saveLocation, 'w') as outfile:
+        json.dump(urlList, outfile)
+
+
+##main##
+driver = initDriver()
+allowCookies(driver)
+scrollPage(driver)
+urls = getImgUrls(driver)
+save(urls)
 driver.quit()
