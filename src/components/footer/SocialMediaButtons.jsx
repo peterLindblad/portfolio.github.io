@@ -9,10 +9,9 @@ export default function SocialMediaButton({ img, path = "/" }) {
 
   return (
     <div style={style}>
-        <Link to={path}>
-            <img src={img} alt="icon"/>
-        </Link>
-
+      <a href={path} rel="noreferrer" target="blank">
+         <img src={img} alt="icon"/>
+      </a>
     </div>
   );
 }

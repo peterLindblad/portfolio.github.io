@@ -31,10 +31,6 @@ a {
 }
 
 @media screen and (max-width: 750px) {
-  /* .footer img {
-    float: none;
-  } */
-
   .footer h3 {
     padding-left: 1em;
   }
@@ -43,4 +39,10 @@ a {
    flex-wrap: wrap;
   }
 
+}
+
+@media screen and (max-width: 350px) {
+  .footer img {
+    float: right;
+  }
 }
