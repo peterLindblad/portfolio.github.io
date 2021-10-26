@@ -1,5 +1,7 @@
 import { ImageSlider } from "../imageSlider/ImageSlider";
 import { Container } from "../layout/Container";
+import { AlbumPreview } from "../gridGallery/AlbumPreview";
+import { CollagePreview } from "../gridGallery/CollagePreview";
 
 export default function MainPage() {
   return (
@@ -16,6 +18,8 @@ export default function MainPage() {
         faucibus orci luctus et ultrices posuere cubilia curae; Integer ac neque
         et augue pellentesque sagittis.
       </p>
+      <AlbumPreview headline="Senaste Bilderna" albumName="Bandy" maxImages={4}/>
+      <CollagePreview headline="Nya Album"/>
     </Container>
   );
 }
