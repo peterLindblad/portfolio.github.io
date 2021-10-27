@@ -3,7 +3,7 @@ const gridItemStyle = {
   color: "#FFF",
   padding: "0",
   boxSizing: "border-box",
-  "text-align": "center",
+  textAlign: "center",
 };
 
 export function GridItem({ children }) {

@@ -33,24 +33,20 @@ export function ImageLabel({ children, isOverlay = false }) {
     alignItems: "center",
   };
 
-  // Logic
-  let label;
-  if (isOverlay) {
-    label = (
-      <div style={overlayContainerStyle}>
-        <h3 style={{ ...imageLabelStyle, ...imageLabelOverlayStyle }}>
+  // Render
+  return (
+    <>
+      {isOverlay ? (
+        <div style={overlayContainerStyle}>
+          <h3 style={{ ...imageLabelStyle, ...imageLabelOverlayStyle }}>
+            {children}
+          </h3>
+        </div>
+      ) : (
+        <h3 style={{ ...imageLabelStyle, ...imageLabelNoneOverlayStyle }}>
           {children}
         </h3>
-      </div>
-    );
-  } else {
-    label = (
-      <h3 style={{ ...imageLabelStyle, ...imageLabelNoneOverlayStyle }}>
-        {children}
-      </h3>
-    );
-  }
-
-  // Render
-  return <>{label}</>;
+      )}
+    </>
+  );
 }
