@@ -1,8 +1,48 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+ 
 }
 
 a {
   text-decoration: none;
+}
+
+.footer {
+  height: 10em;
+}
+
+.footer img {
+  float: left;
+}
+
+.footer h3 {
+  padding-left: "8em",
+}
+
+@media screen and (max-width: 1550px) {
+  .footer h3 {
+    padding-left: 1em;
+  }
+  .footer {
+    height: 10em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footer h3 {
+    padding-left: 1em;
+  }
+
+  .footer {
+   flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .footer img {
+    float: right;
+  }
 }

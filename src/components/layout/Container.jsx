@@ -7,7 +7,7 @@ export const ContainerTypes = {
 const ContainerStyles = {
   Main: {
     display: "flex",
-    width: "100vw",
+    width: "100%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
