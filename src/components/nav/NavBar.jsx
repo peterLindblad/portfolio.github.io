@@ -10,13 +10,21 @@ const navStyle = {
 };
 
 export default function NavBar() {
+
+  const scrollToBottom = ()=>
+  {
+    window.scrollTo({ 
+      top: document.documentElement.scrollHeight, 
+      behavior: "smooth"
+    });
+  }
+
   return (
     <nav style={navStyle}>
       <Logo />
       <NavButton text="Hem" path="/" />
       <NavButton text="Arkiv" path="/archive" />
-      <NavButton text="Om" path="about" />
-      <NavButton text="Kontakt" path="about" />
+      <NavButton text="Om" onClick={scrollToBottom} path="#" />
     </nav>
   );
 }
