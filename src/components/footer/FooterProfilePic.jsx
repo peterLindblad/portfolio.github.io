@@ -9,15 +9,21 @@ const footerStyle = {
   border: "1px solid #050505",
 };
 
+const imgContainer = {
+  textAlign: "center"
+};
+
 export default function FooterProfilePic() {
   return (
     <>
+    <div className="imgContainer" style={imgContainer}>
       <img
         style={footerStyle}
         className="img-profilePicture"
         src={profile}
         alt="profilePicture"
       />
+      </div>
     </>
   );
 }

@@ -41,8 +41,16 @@ a {
 
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 550px) {
   .footer img {
-    float: right;
+    float: none;
+    margin: 1em;
+
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .imgContainer img {
+    margin: 1em !important;
   }
 }
