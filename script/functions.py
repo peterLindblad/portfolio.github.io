@@ -80,8 +80,10 @@ def getImages(driver):
             nextImage(driver)
 
     print('Done')
-    print(len(urlList))
+    print(f'URLS gatherd{len(urlList)}')
+    time.sleep(1)
     driver.find_element(By.XPATH, '//body').send_keys(Keys.ESCAPE)
+    time.sleep(2)
     return urlList
 
 

@@ -23,6 +23,8 @@ for album in albumElements:
     albums.append(albumInfo)
 
 print('Scaning Images...')
+# it sort of works, but to many requests results in a api limit from facebook
+# build an interface wich lets the user exceute what images to be scraped, with auto detect if there is anew album.
 for album in albums:
     albumElement = driver.find_element(
         By.XPATH, f"//*[text()='{album['name']}']")
